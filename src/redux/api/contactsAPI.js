@@ -35,7 +35,6 @@ export const deleteContact = createAsyncThunk(
     'contacts/delete',
     async ({ id }, { rejectWithValue }) => {
         try {
-            console.log(id);
             await fetch(`https://63c8ee10320a0c4c953d3945.mockapi.io/contacts/${id}`, {
                 method: 'DELETE'
             });
