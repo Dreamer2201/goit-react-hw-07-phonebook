@@ -17,14 +17,15 @@ export const addNewContact = createAsyncThunk(
     'contacts/add',
     async (data, { rejectWithValue }) => {
         try {
-            await fetch('https://63c8ee10320a0c4c953d3945.mockapi.io/contacts', {
+            const response = await fetch('https://63c8ee10320a0c4c953d3945.mockapi.io/contacts', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
                     "Content-type": "application/json"
                 }
-            });
-            return data;
+            });          
+            const result = await response.json();
+            return result;
         } catch (error) {
             return rejectWithValue(error);
         }
@@ -39,7 +40,6 @@ export const deleteContact = createAsyncThunk(
                 method: 'DELETE'
             });
             return id;
-
         } catch (error) {
             return rejectWithValue(error);
         } 

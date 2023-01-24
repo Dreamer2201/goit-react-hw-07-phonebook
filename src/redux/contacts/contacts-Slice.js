@@ -27,7 +27,7 @@ const contactsSlice = createSlice({
             return state;
         },
 
-        [deleteContact.pending]: (state, action) => {
+        [deleteContact.pending]: (state) => {
             state.loading = true;
             return state;
         },
@@ -42,7 +42,7 @@ const contactsSlice = createSlice({
             state.error = action.payload;
             return state;
         },
-        [addNewContact.pending]: (state, action) => {
+        [addNewContact.pending]: (state) => {
             state.loading = true;
             return state;
         },

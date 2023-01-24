@@ -36,7 +36,6 @@ export default function PhonebookForm() {
         const contact = {
             name,
             phone: number,
-            id: nanoid(),
         };
         setName('');
         setNumber('');
